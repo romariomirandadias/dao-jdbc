@@ -13,6 +13,10 @@ public class Departamento implements Serializable {
 		this.name = name;
 	}
 
+	public Departamento() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public Integer getId() {
 		return id;
 	}
