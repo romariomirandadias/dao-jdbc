@@ -10,6 +10,7 @@ public class ProgramJDBC {
 		
 		
 		VendedorDao vendedorDao = DaoFactory.createVendedorDao();
+		System.out.println("=== TEST 1: vendedor findById =====");
 		Vendedor v = vendedorDao.findById(3);
 		System.out.println(v);
 
