@@ -1,6 +1,5 @@
 package aplicattion;
 
-import java.sql.Date;
 import java.util.List;
 
 import model.dao.DaoFactory;
@@ -32,6 +31,11 @@ public class ProgramJDBC {
 		Vendedor newVendedor=new Vendedor(null,"Greg","greg@gmail.com",new java.util.Date(),4000.00,dep);
 		vendedorDao.insert(newVendedor);
 		System.out.println("Inserido ! Novo Id = " + newVendedor);
+		System.out.println("\n=== TEST 5: vendedor update =====");
+		v=vendedorDao.findById(1);
+		v.setNome("Marta Waine");
+		vendedorDao.update(v);
+		System.out.println("Update Completed !");
 	}
 
 }
