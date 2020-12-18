@@ -16,9 +16,14 @@ public class ProgramJDBC {
 		System.out.println("=== TEST 1: vendedor findById =====");
 		Vendedor v = vendedorDao.findById(3);
 		System.out.println(v);
-		System.out.println("\n=== TEST 2: seller findByDepartment =====");
+		System.out.println("\n=== TEST 2: vendedor findByDepartment =====");
 		Departamento dep=new Departamento(2,null);
 		List<Vendedor> list=vendedorDao.findByDepartment(dep);
+		for(Vendedor obj:list) {
+			System.out.println(obj);	
+		}
+		System.out.println("\n=== TEST 3: vendedor findAll =====");
+		 list=vendedorDao.findAll();
 		for(Vendedor obj:list) {
 			System.out.println(obj);
 		}
