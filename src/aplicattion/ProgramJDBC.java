@@ -1,6 +1,7 @@
 package aplicattion;
 
 import java.util.List;
+import java.util.Scanner;
 
 import model.dao.DaoFactory;
 import model.dao.VendedorDao;
@@ -11,7 +12,7 @@ public class ProgramJDBC {
 
 	public static void main(String[] args) {
 		
-		
+		Scanner sc=new Scanner(System.in);
 		VendedorDao vendedorDao = DaoFactory.createVendedorDao();
 		System.out.println("=== TEST 1: vendedor findById =====");
 		Vendedor v = vendedorDao.findById(3);
@@ -36,6 +37,11 @@ public class ProgramJDBC {
 		v.setNome("Marta Waine");
 		vendedorDao.update(v);
 		System.out.println("Update Completed !");
+		System.out.println("\n=== TEST 6: vendedor delete =====");
+		System.out.println("Entre com o ID a ser deletado :");
+		int id=sc.nextInt();
+		vendedorDao.deleteById(id);
+		System.out.println("Delete Completed !");
 	}
 
 }
